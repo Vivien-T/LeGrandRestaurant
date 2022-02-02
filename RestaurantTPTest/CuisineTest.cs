@@ -12,7 +12,8 @@ namespace RestaurantTPTest
         public void Produit_bien_créé_avec_statut_non_pret()
         {
             var cuisine = new CuisineBuilder().Creer("resto1").Build();
-            Assert.NotEqual(null, cuisine.Restaurant);
+
+            Assert.NotNull(cuisine.Restaurant);
         }
     }
 }
