@@ -9,7 +9,7 @@ namespace RestaurantTPTest.utilities
     {
         private string _nom = string.Empty;
 
-        public ServeurBuilder Nomme(string nom)
+        public ServeurBuilder Nommé(string nom)
         {
             _nom = nom;
             return this;
