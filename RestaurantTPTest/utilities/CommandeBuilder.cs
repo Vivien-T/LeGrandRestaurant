@@ -9,17 +9,19 @@ namespace RestaurantTPTest.utilities
 {
     internal class CommandeBuilder
     {
-        private string _nom = string.Empty;
+        private Client _client;
+        private Serveur _serveur;
 
-        public CommandeBuilder Nommé(string nom)
+        public CommandeBuilder Commandé(Client client, Serveur serveur)
         {
-            _nom = nom;
+            _client = client;
+            _serveur = serveur;
             return this;
         }
 
         public Commande Build()
         {
-            return new Commande(_nom);
+            return new Commande(_serveur, _client);
         }
     }
 }

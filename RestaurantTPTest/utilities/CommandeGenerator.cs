@@ -9,11 +9,11 @@ namespace RestaurantTPTest.utilities
 {
     class CommandeGenerator
     {
-        private CommandeGenerator _builder = new();
+        private CommandeBuilder _builder = new CommandeBuilder();
 
-        public CommandeGenerator Nommés(string nom)
+        public CommandeGenerator Commandés(Serveur serveur, Client client)
         {
-            _builder = _builder.Nommé(nom);
+            _builder = _builder.Commandé(client, serveur);
             return this;
         }
 
