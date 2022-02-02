@@ -5,7 +5,7 @@ namespace RestaurantTPTest.utilities
 {
     internal class ClientGenerator
     {
-        private ClientBuilder _builder = new();
+        private ClientBuilder _builder = new ClientBuilder();
 
         public ClientGenerator Nommés(string nom)
         {
