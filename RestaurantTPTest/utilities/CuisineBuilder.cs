@@ -10,7 +10,8 @@ namespace RestaurantTPTest.utilities
 
         public CuisineBuilder  Creer(string name)
         {
-            _resto = new Restaurant(name);
+            List<Serveur> list = new List<Serveur>();
+            _resto = new Restaurant(name, list);
             return this;
         }
         public Cuisine Build()
