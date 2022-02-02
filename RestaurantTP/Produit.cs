@@ -12,7 +12,7 @@ namespace RestaurantTP
         public int Stock { get; private set; }
         public string Statut { get; set; }
 
-        public Produit(int prix, string nom, int stock)
+        public Produit(float prix, string nom, int stock)
         {
             Prix = prix;
             Nom = nom;
