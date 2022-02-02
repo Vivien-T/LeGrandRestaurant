@@ -7,13 +7,13 @@ namespace RestaurantTP
         private readonly Serveur[] _serveurs;
         public string Nom { get; private set; }
 
-        public Restaurant(string nom, params Serveur[] serveurs)
+        public Restaurant(string nom, Serveur[] serveurs)
         {
             _serveurs = serveurs;
             Nom = nom;
         }
 
-        public decimal ChiffreAffaires
+        public float ChiffreAffaires
             => _serveurs.Sum(serveur => serveur.ChiffreAffaires);
     }
 }
