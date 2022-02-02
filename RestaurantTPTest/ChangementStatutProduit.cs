@@ -11,11 +11,12 @@ namespace RestaurantTPTest
         [Fact]
         public void Cuisine_change_statut_produit()
         {
-            Restaurant restaurant = new Restaurant("Le Resto");
+            List<Serveur> list = new List<Serveur>();
+            Restaurant restaurant = new Restaurant("Le Resto", list);
             Cuisine cuisine = new Cuisine(restaurant);
             Produit pizza = new Produit(15, "Pizza", 4);
 
-            Cuisine.changeStatut(pizza);
+            cuisine.changeStatut(pizza);
 
             Assert.Equal("pret", pizza.Statut);
         }

@@ -2,7 +2,7 @@
 using System.Linq;
 using Xunit;
 
-namespace RestaurantTP.Test
+namespace RestaurantTPTest
 {
     public class ClientTest
     {
