@@ -8,7 +8,7 @@ namespace RestaurantTP
         public string Nom { get; private set; }
         public float ChiffreAffaires { get; private set; }
 
-        public Serveur(string nom, decimal salaire)
+        public Serveur(string nom)
         {
             Nom = nom;
             ChiffreAffaires = 0;
