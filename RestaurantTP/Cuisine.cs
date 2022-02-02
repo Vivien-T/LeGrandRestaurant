@@ -4,12 +4,12 @@ using System.Text;
 
 namespace RestaurantTP
 {
-    class Cuisine
+    public class Cuisine
     {
         public Restaurant Restaurant { get; private set; }
-        public Cuisine(Restaurant resta)
+        public Cuisine(Restaurant resto)
         {
-            Restaurant = resta;
+            Restaurant = resto;
         }
 
         public Produit changeStatut(Produit prod)
