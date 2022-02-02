@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace RestaurantTPTest
 {
-    public class ServeurEtClient
+    public class PriseCommande
     {
         [Fact]
         public void Serveur_prend_commande_a_un_client()
