@@ -13,7 +13,7 @@ namespace RestaurantTPTest
     {
 
         private Client _client = new Client("FLorent");
-        private Serveur _serveur = new Serveur("Theo", 1260);
+        private Serveur _serveur = new Serveur("Theo");
 
 
         [Fact]
