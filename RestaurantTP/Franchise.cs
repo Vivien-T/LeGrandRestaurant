@@ -8,14 +8,13 @@ namespace RestaurantTP
     {
 
 
-        public String nomFranchise { get; private set; }
+        public string NomFranchise { get; private set; }
+        public List<Restaurant> ListeResto { get; private set; }
 
         public Franchise(string nomFranchise, List<Restaurant> listeResto)
         {
-            nomFranchise = listeResto;
-
-            return nomFranchise;
-
+            NomFranchise = nomFranchise;
+            ListeResto = listeResto;
         }
 
     }
