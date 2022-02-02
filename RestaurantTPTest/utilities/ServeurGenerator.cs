@@ -5,7 +5,7 @@ namespace RestaurantTPTest.utilities
 {
     internal class ServeurGenerator
     {
-        private ServeurBuilder _builder = new();
+        private ServeurBuilder _builder = new ServeurBuilder();
 
         public ServeurGenerator Nommés(string nom)
         {
