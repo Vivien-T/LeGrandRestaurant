@@ -9,7 +9,7 @@ namespace RestaurantTPTest
     public class CuisineTest
     {
         [Fact]
-        public void Produit_bien_créé_avec_statut_non_pret()
+        public void Cuisine_bien_cree()
         {
             var cuisine = new CuisineBuilder().Creer("resto1").Build();
 
