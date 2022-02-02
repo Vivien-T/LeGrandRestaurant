@@ -5,7 +5,7 @@ namespace RestaurantTP
 {
     public class Restaurant
     {
-        private readonly Serveur[] _serveurs;
+        private readonly List<Serveur> _serveurs;
         public string Nom { get; private set; }
 
         public Restaurant(string nom, List<Serveur> serveurs)
