@@ -5,7 +5,7 @@ namespace RestaurantTPTest.utilities
 {
     internal class ProduitGenerator
     {
-        private ProduitBuilder _builder = new();
+        private ProduitBuilder _builder = new ProduitBuilder();
 
         public ProduitGenerator Créés(float prix, string nom, int stock)
         {
