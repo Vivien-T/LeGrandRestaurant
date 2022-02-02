@@ -23,9 +23,7 @@ namespace RestaurantTPTest
             var desProduits = new ProduitGenerator().Créés(10, "Produit", 100).Generate(250);
 
             Assert.Equal(2500, desProduits.Sum(produit => produit.Prix));
-            Assert.Equal("Produit", desProduits.Sum(produit => produit.Nom));
             Assert.Equal(25000, desProduits.Sum(produit => produit.Stock));
-            Assert.Equal("non prêt", desProduits.Sum(produit => produit.Statut));
         }
     }
 }
