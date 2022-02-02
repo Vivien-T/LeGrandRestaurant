@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace RestaurantTP
 {
@@ -7,7 +8,7 @@ namespace RestaurantTP
         private readonly Serveur[] _serveurs;
         public string Nom { get; private set; }
 
-        public Restaurant(string nom, Serveur[] serveurs)
+        public Restaurant(string nom, List<Serveur> serveurs)
         {
             _serveurs = serveurs;
             Nom = nom;
