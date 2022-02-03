@@ -30,7 +30,7 @@ namespace RestaurantTPTest
             listeProduits2.Add(frites);
 
             Commande commande = serge.PrendreCommande(damien, listeProduits1);
-            Commande commande2 = patrick.PrendreCommande(jeanne, listeProduits2);
+            patrick.PrendreCommande(jeanne, listeProduits2);
 
             List<Serveur> listeServeurs = new List<Serveur>();
             listeServeurs.Add(serge);
@@ -41,6 +41,7 @@ namespace RestaurantTPTest
             // On vérifie que le chiffre d'affaires du serveur correspond bien à la somme des prix des produits commandés
             Assert.Equal(pizza.Prix + tiramisu.Prix, serge.ChiffreAffaires);
 
+            Assert.NotNull(commande);
             Assert.Equal(commande.LeClient, damien);
             Assert.Equal(commande.LeServeur, serge);
             Assert.Equal(commande.LesProduits, listeProduits1);

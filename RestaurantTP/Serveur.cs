@@ -16,6 +16,7 @@ namespace RestaurantTP
         public Commande PrendreCommande(Client client, List<Produit> produits)
         {
             Commande commande = new Commande(this, client);
+            Console.WriteLine(commande);
             commande.AjouterDesProduits(produits);
             ChiffreAffaires += commande.ObtenirLaSommeDesProduits();
             return commande;
