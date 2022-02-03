@@ -22,7 +22,7 @@ namespace RestaurantTPTest
             var commandeTest = new CommandeBuilder().Commandé(_client, _serveur).Build();
             Produit lasagnes = new Produit(100,"Lasagnes", 6);
             commandeTest.AjouterUnProduit(lasagnes);
-            List<Produit> lesPropro = new List<Produit>() { new Produit(100, "Lasagnes", 6) };
+            List<Produit> lesPropro = new List<Produit>() { lasagnes };
             Assert.Equal(lesPropro, commandeTest.LesProduits);
         }
 
@@ -34,7 +34,7 @@ namespace RestaurantTPTest
             Produit tartes = new Produit(100, "tartes", 35);
             Produit spaghettis = new Produit(23, "spaghettis", 100);
             Produit salade = new Produit(60, "salade", 10);
-            List<Produit> lesPropro = new List<Produit>() { lasagnes,tartes,spaghettis,salade };
+            List<Produit> lesPropro = new List<Produit>() { lasagnes, tartes, spaghettis, salade };
             commandeTest.AjouterDesProduits(lesPropro);
             Assert.Equal(lesPropro, commandeTest.LesProduits);
         }

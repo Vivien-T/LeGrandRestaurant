@@ -24,17 +24,11 @@ namespace RestaurantTPTest
 
             List<Produit> listeProduits1 = new List<Produit>() { pizza, tiramisu };
             List<Produit> listeProduits2 = new List<Produit>() { crepe, frites };
-            //listeProduits1.Add(pizza);
-            //listeProduits1.Add(tiramisu);
-            //listeProduits2.Add(crepe);
-            //listeProduits2.Add(frites);
 
             Commande commande = serge.PrendreCommande(damien, listeProduits1);
             patrick.PrendreCommande(jeanne, listeProduits2);
 
             List<Serveur> listeServeurs = new List<Serveur>() { serge, patrick };
-            //listeServeurs.Add(serge);
-            //listeServeurs.Add(patrick);
 
             Restaurant leResto = new Restaurant("LeResto", listeServeurs);
 
