@@ -1,11 +1,12 @@
 using RestaurantTP;
+using System.Collections.Generic;
 
 namespace RestaurantTPTest.utilities
 {
   internal class RestaurantBuilder
   {
-    private readonly List<Serveur> _serveurs;
-    public string Nom { get; private set; }
+    private List<Serveur> _serveurs = new List<Serveur>();
+    private string _nom { get; set; }
 
     public RestaurantBuilder Créé(List<Serveur> serveurs, string nom)
     {
@@ -17,7 +18,7 @@ namespace RestaurantTPTest.utilities
 
     public Restaurant Build()
     {
-      return new Restaurant( _serveurs , _nom);
+      return new Restaurant(_nom, _serveurs);
     }
   }
 }

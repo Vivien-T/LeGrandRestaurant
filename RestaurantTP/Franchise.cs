@@ -4,16 +4,16 @@ using System.Text;
 
 namespace RestaurantTP
 {
-    class Franchise
+    public class Franchise
     {
 
 
-        public string NomFranchise { get; private set; }
+        public string Nom { get; private set; }
         public List<Restaurant> ListeResto { get; private set; } = new List<Restaurant>();
 
-        public Franchise(string nomFranchise, List<Restaurant> listeResto)
+        public Franchise(string nom, List<Restaurant> listeResto)
         {
-            NomFranchise = nomFranchise;
+            Nom = nom;
             ListeResto = listeResto;
         }
 
