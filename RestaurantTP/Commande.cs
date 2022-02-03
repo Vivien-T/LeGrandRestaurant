@@ -8,7 +8,7 @@ namespace RestaurantTP
     {
         public Serveur LeServeur { get; private set; }
         public Client LeClient { get; private set; }
-        public List<Produit> LesProduits { get; set; } = new List<Produit>();
+        public List<Produit> LesProduits { get; private set; } = new List<Produit>();
 
         public Commande(Serveur leServeur, Client leClient)
         {
@@ -39,7 +39,7 @@ namespace RestaurantTP
 
         public void EnleverDesProduits(List<Produit> lesPropro)
         {
-            foreach (Produit propro in LesProduits)
+            foreach (Produit propro in lesPropro)
             {
                 if (LesProduits.Contains(propro))
                 {
