@@ -8,7 +8,7 @@ namespace RestaurantTP
     {
         public Serveur LeServeur { get; private set; }
         public Client LeClient { get; private set; }
-        public List<Produit> LesProduits { get; set; }
+        public List<Produit> LesProduits { get; set; } = new List<Produit>();
 
         public Commande(Serveur leServeur, Client leClient)
         {
