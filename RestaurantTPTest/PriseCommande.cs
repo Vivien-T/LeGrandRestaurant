@@ -12,18 +12,36 @@ namespace RestaurantTPTest
         public void Serveur_prend_commande_a_un_client()
         {
             Client damien = new Client("Damien");
+
             Serveur serge = new Serveur("Serge");
+            Serveur patrick = new Serveur("Patrick");
+
             Produit pizza = new Produit(15, "Pizza", 4);
             Produit tiramisu = new Produit(4, "Tiramisu", 2);
-            List<Produit> listeProduits = new List<Produit>(){pizza, tiramisu};
+            Produit crepe = new Produit(10, "Crepe", 5);
+            Produit frites = new Produit(5, "Frites", 20);
 
-            Commande commande = serge.PrendreCommande(damien, listeProduits);
+            List<Produit> listeProduits1 = new List<Produit>(){pizza, tiramisu};
+            List<Produit> listeProduits2 = new List<Produit>(){crepe, frites};
 
+            Commande commande = serge.PrendreCommande(damien, listeProduits1);
+            Commande commande2 = patrick.PrendreCommande(patrick, listeProduits2);
+
+            List<Serveur> listeServeurs = new List<Serveur>(){serge, patrick};
+
+            Restaurant leResto = new Restaurant(listeServeurs, "LeResto");
+
+            // On vérifie que le chiffre d'affaires du serveur correspond bien à la somme des prix des produits commandés
             Assert.Equal(pizza.Prix + tiramisu.Prix, serge.ChiffreAffaires);
+
             Assert.Equal(commande.LeClient, damien);
             Assert.Equal(commande.LeServeur, serge);
-            Assert.Equal(commande.LesProduits, listeProduits);
+            Assert.Equal(commande.LesProduits, listeProduits1);
+
+            // On vérifie que la somme des chiffres d'affaires des serveurs est égale au chiffre d'affaire du Restaurant
+            Assert.Equal(serge.ChiffreAffaires + patrick.ChiffreAffaires, LeResto.ChiffreAffaires);
         }
 
     }
 }
+;
