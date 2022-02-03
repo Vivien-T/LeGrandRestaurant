@@ -41,7 +41,6 @@ namespace RestaurantTPTest
             // On vérifie que le chiffre d'affaires du serveur correspond bien à la somme des prix des produits commandés
             Assert.Equal(pizza.Prix + tiramisu.Prix, serge.ChiffreAffaires);
 
-            Assert.NotNull(commande);
             Assert.Equal(commande.LeClient, damien);
             Assert.Equal(commande.LeServeur, serge);
             Assert.Equal(commande.LesProduits, listeProduits1);
