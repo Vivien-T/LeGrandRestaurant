@@ -9,7 +9,7 @@ namespace RestaurantTP
 
 
         public string NomFranchise { get; private set; }
-        public List<Restaurant> ListeResto { get; private set; }
+        public List<Restaurant> ListeResto { get; private set; } = new List<Restaurant>();
 
         public Franchise(string nomFranchise, List<Restaurant> listeResto)
         {
