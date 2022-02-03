@@ -12,6 +12,7 @@ namespace RestaurantTPTest
         public void Serveur_prend_commande_a_un_client()
         {
             Client damien = new Client("Damien");
+            Client jeanne = new Client("Jeanne");
 
             Serveur serge = new Serveur("Serge");
             Serveur patrick = new Serveur("Patrick");
@@ -21,15 +22,21 @@ namespace RestaurantTPTest
             Produit crepe = new Produit(10, "Crepe", 5);
             Produit frites = new Produit(5, "Frites", 20);
 
-            List<Produit> listeProduits1 = new List<Produit>(){pizza, tiramisu};
-            List<Produit> listeProduits2 = new List<Produit>(){crepe, frites};
+            List<Produit> listeProduits1 = new List<Produit>();
+            List<Produit> listeProduits2 = new List<Produit>();
+            listeProduits1.Add(pizza);
+            listeProduits1.Add(tiramisu);
+            listeProduits2.Add(crepe);
+            listeProduits2.Add(frites);
 
             Commande commande = serge.PrendreCommande(damien, listeProduits1);
-            Commande commande2 = patrick.PrendreCommande(patrick, listeProduits2);
+            Commande commande2 = patrick.PrendreCommande(jeanne, listeProduits2);
 
-            List<Serveur> listeServeurs = new List<Serveur>(){serge, patrick};
+            List<Serveur> listeServeurs = new List<Serveur>();
+            listeServeurs.Add(serge);
+            listeServeurs.Add(patrick);
 
-            Restaurant leResto = new Restaurant(listeServeurs, "LeResto");
+            Restaurant leResto = new Restaurant("LeResto", listeServeurs);
 
             // On vérifie que le chiffre d'affaires du serveur correspond bien à la somme des prix des produits commandés
             Assert.Equal(pizza.Prix + tiramisu.Prix, serge.ChiffreAffaires);
@@ -39,7 +46,7 @@ namespace RestaurantTPTest
             Assert.Equal(commande.LesProduits, listeProduits1);
 
             // On vérifie que la somme des chiffres d'affaires des serveurs est égale au chiffre d'affaire du Restaurant
-            Assert.Equal(serge.ChiffreAffaires + patrick.ChiffreAffaires, LeResto.ChiffreAffaires);
+            Assert.Equal(serge.ChiffreAffaires + patrick.ChiffreAffaires, leResto.ChiffreAffaires);
         }
 
     }
